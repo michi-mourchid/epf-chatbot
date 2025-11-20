@@ -68,7 +68,7 @@ export default function ChatInterface() {
       }
 
       const data = await response.json()
-      console.log("[v0] Réponse du webhook n8n:", data)
+      console.log("Réponse du webhook n8n:", data)
 
       const botOutput = Array.isArray(data) ? data[0]?.output : data.output
       const botMessage: Message = {
@@ -79,7 +79,7 @@ export default function ChatInterface() {
       }
       setMessages((prev) => [...prev, botMessage])
     } catch (error) {
-      console.error("[v0] Erreur lors de l'appel au webhook:", error)
+      console.error("Erreur lors de l'appel au webhook:", error)
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         content: "Désolé, une erreur s'est produite. Veuillez réessayer plus tard.",
