@@ -16,6 +16,12 @@ export const metadata: Metadata = {
   title: "EPF Chatbot - Assistant virtuel",
   description: "Assistant virtuel pour EPF Engineering School",
   generator: "v0.app",
+  authors: [{ name: "Mourchid MOUTUIDINE", url: "https://mourchid-studio.tech" },
+  { name: "EPF Engineering School", url: "https://epf.fr" },
+  { name: "Génération IA EPF", url: "https://epf.fr" }],
+  icons: {
+    icon: "/favicon.ico",
+  }
 }
 
 export default function RootLayout({
