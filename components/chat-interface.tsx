@@ -53,7 +53,7 @@ export default function ChatInterface() {
     setIsLoading(true)
 
     try {
-      const response = await fetch("https://epf-n8n.mourchid.me/webhook-test/b9a00d21-ae2c-4ba7-b017-4c1580c3eb0c", {
+      const response = await fetch("https://epf-n8n.mourchid.me/webhook/b9a00d21-ae2c-4ba7-b017-4c1580c3eb0c", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
