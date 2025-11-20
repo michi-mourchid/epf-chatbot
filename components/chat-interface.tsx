@@ -27,6 +27,15 @@ export default function ChatInterface() {
   ])
   const [inputValue, setInputValue] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [sessionId] = useState(() => {
+    // Si dispo, on utilise un vrai UUID
+    if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
+      return crypto.randomUUID()
+    }
+    // fallback simple
+    return `session-${Date.now()}-${Math.random().toString(16).slice(2)}`
+  })
+
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -59,7 +68,8 @@ export default function ChatInterface() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: userMessage.content,
+          chatInput: userMessage.content,
+          sessionId: sessionId,
         }),
       })
 
